@@ -1,0 +1,571 @@
+/* ==========================================================================
+   1. LIVE BACKGROUND CANVAS CONFIGURATIONS (FULL STRETCH FIXED)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: "Impact", Arial, sans-serif; 
+    background-color: #0b1e36; /* Dark navy fallback instead of pitch black */
+    
+    background-image: url('images/background.gif');
+    background-attachment: fixed;  /* 🔴 LOCKS IT: Keeps the image locked to the glass instead of scrolling away */
+    background-size: cover;        /* 🔴 STRETCHES IT: Forces the image to always stretch to cover the entire page height */
+    background-position: center top;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* ==========================================================================
+   2. HEADER LOGO & CENTERED LAYERED TEXT
+   ========================================================================== */
+.canvas-header {
+    width: 100%;
+    position: relative;
+    padding-top: 20px;
+}
+
+.header-logo-container {
+    display: block;
+    margin: 0 auto 30px auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+.main-logo-graphic {
+    width: 100%;
+    height: auto;
+    border: 2px solid #ffffff;
+}
+
+/* ==========================================================================
+   3. SHARP STACKED LEFT SIDE NAVIGATION PANEL (RESTORED ORIGINAL CLEAN LINKS)
+   ========================================================================== */
+.canvas-side-nav {
+    position: absolute;
+    top: 150px;
+    left: 0;
+    width: 165px; 
+    z-index: 1000;
+}
+
+.nav-stack {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid #7a6b58; 
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.category-header {
+    background-color: #0d47a1; 
+    color: #ffffff;
+    font-family: "Impact", Arial, sans-serif; 
+    font-size: 1.1rem;
+    padding: 6px 10px;
+    text-align: left;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #7a6b58;
+}
+
+.nav-item {
+    display: block;
+    background-color: #f7f4eb; 
+    color: #2b2b2b;            
+    text-decoration: none;
+    font-family: "Arial", Helvetica, sans-serif; /* Back to clean original typography */
+    font-weight: 700;          
+    font-size: 0.85rem;        
+    padding: 6px 10px;
+    text-align: left;
+    border-bottom: 1px solid #e3dec3;
+    position: relative;
+    letter-spacing: 0.2px;
+    transition: all 0.1s ease;
+}
+
+.nav-item:hover {
+    background-color: #ffb300; 
+    color: #000000;
+    padding-left: 12px;        
+}
+
+/* ==========================================================================
+   3b. SIDEBAR MONTHLY MEETING PANEL (HIGH-CONTRAST TIMETABLE FOCUS ONLY)
+   ========================================================================== */
+.sidebar-meetings-panel {
+    margin-top: 30px;
+    width: 165px;
+    font-family: "Impact", Arial, sans-serif;
+    text-align: center;
+}
+
+.meeting-panel-title {
+    color: #00cc00;              /* Bright green to cut through background textures */
+    font-size: 2rem;
+    line-height: 1.1;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+    /* 🔴 Thick outline drops background clutter out completely */
+    text-shadow: 3px 3px 0px #000000, -1px -1px 0px #000000;
+}
+
+.meeting-schedule-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 16px;
+    text-align: left;
+    padding-left: 5px;
+}
+
+.sidebar-mini-badge {
+    width: 44px;                 
+    height: 44px;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px #000000);
+}
+
+.schedule-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.day-highlight {
+    /* 🔴 Thicker font weight + outline applied cleanly just to schedules */
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-weight: 900;
+    font-size: 0.85rem;
+    color: #ffffff;
+    text-shadow: 2px 2px 2px #000000, -1px -1px 0px #000000;
+    text-transform: uppercase;
+}
+
+.time-highlight {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-weight: 900;
+    font-size: 0.95rem;
+    color: #ffb300;              /* Gold time stamps */
+    text-shadow: 2px 2px 2px #000000, -1px -1px 0px #000000;
+    margin-top: 2px;
+}
+
+
+/* ==========================================================================
+   4. MIDDLE MAIN BODY CONTENT LAYOUT (CANVAS MODE & MIN-HEIGHT LOCK)
+   ========================================================================== */
+.content-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    text-align: center;
+    padding-left: 200px; /* Leaves clear structural clearance on the left edge for menu */
+    
+    /* 🔴 CRITICAL STABILIZER: Forces short pages to stay tall enough to clear the sidebar */
+    min-height: 520px;   /* 🛠️ Adjust this number up or down to match your sidebar's exact height */
+}
+
+
+/* Centers the main headline elements directly over the eagle canvas background */
+.live-branding-center {
+    margin-bottom: 30px;
+}
+
+.live-branding-center h2 {
+    font-size: 2.8rem;
+    text-shadow: 3px 3px 4px #000000;
+    margin-bottom: 5px;
+}
+
+.live-branding-center .url-highlight-red {
+    color: #e53935; /* Bright red site name target URL link */
+    font-size: 2.4rem;
+    display: block;
+    text-shadow: 2px 2px 3px #000000;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.live-contact-details {
+    font-size: 1.4rem;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px #000000;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   5. HISTORY, OPEN DAILY SIGN & FACEBOOK PANEL UTILITIES
+   ========================================================================== */
+.history-section {
+    text-align: center;
+    margin: 40px auto;
+    font-family: "Impact", Arial, sans-serif;
+}
+
+.years-banner {
+    color: #448aff;
+    font-size: 1.3rem;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.history-title {
+    color: #ffffff;
+    font-size: 2.2rem;
+    text-shadow: 3px 3px 0px #000000;
+    letter-spacing: 1px;
+}
+
+.coming-soon-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.click-badge {
+    background: #0d47a1;
+    color: #ffffff;
+    font-size: 0.8rem;
+    padding: 3px 10px;
+    border-radius: 12px;
+    border: 1px solid #ffffff;
+}
+
+.coming-soon-stamp {
+    color: #d32f2f;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+/* --- THE VINTAGE TAN HOURS SIGN --- */
+.open-daily-sign {
+    max-width: 550px;
+    margin: 40px auto;
+    background: linear-gradient(to bottom, #ebdcd0 0%, #cbbba8 100%);
+    border: 3px solid #000000;
+    padding: 15px;
+    color: #000000;
+    font-family: "Impact", Arial, sans-serif;
+    position: relative;
+    box-shadow: 5px 5px 15px rgba(0,0,0,0.5);
+}
+
+.sign-inner-border {
+    border: 2px solid #000000;
+    padding: 20px 15px 15px 15px;
+    position: relative;
+}
+
+.sign-header-badge {
+    background: #000000;
+    color: #ffffff;
+    font-size: 1.4rem;
+    padding: 4px 20px;
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    letter-spacing: 1px;
+}
+
+.hours-grid-lines {
+    font-size: 1.3rem;
+    line-height: 1.4;
+    margin-top: 10px;
+}
+
+.change-notice {
+    font-size: 0.95rem;
+    margin-top: 10px;
+}
+
+.updated-timestamp {
+    position: absolute;
+    right: -130px;
+    bottom: 0;
+    color: #ffffff;
+    font-family: "Courier New", monospace;
+    font-size: 0.9rem;
+    text-align: left;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px #000000;
+}
+
+.free-counter-link {
+    font-size: 0.7rem;
+    color: #448aff;
+    text-decoration: underline;
+}
+
+/* --- FACEBOOK STAMP STYLING --- */
+.facebook-validation-panel {
+    text-align: center;
+    margin: 50px auto;
+    font-family: "Impact", Arial, sans-serif;
+}
+
+.fb-main-badge {
+    display: inline-block;
+    background: #ffffff;
+    color: #3b5998;
+    font-size: 1.4rem;
+    padding: 5px 15px;
+    border: 2px solid #000000;
+    font-style: italic;
+}
+
+.fb-f-logo {
+    background: #3b5998;
+    color: #ffffff;
+    padding: 0 8px;
+    font-weight: bold;
+    font-style: normal;
+}
+
+.fb-official-stamp {
+    background: #d32f2f;
+    color: #ffffff;
+    font-size: 0.75rem;
+    padding: 2px 6px;
+    vertical-align: middle;
+    font-style: normal;
+}
+
+.fb-branch-row {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+    flex-wrap: wrap;
+}
+
+.branch-pill {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid #ffffff;
+    padding: 6px 12px;
+    font-size: 0.9rem;
+    color: #ffffff;
+}
+
+.fb-mini-f {
+    color: #3b5998;
+    background: #ffffff;
+    padding: 0 4px;
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.fb-warning-text-stack {
+    font-size: 1.4rem;
+    line-height: 1.2;
+    text-shadow: 2px 2px 3px #000000;
+}
+
+.fb-text-highlight {
+    color: #ffb300;
+    font-size: 1.8rem;
+}
+
+.fb-text-bold-red {
+    color: #d32f2f;
+    font-size: 1.8rem;
+}
+
+.footer-emblem-graphic {
+    height: auto;
+    max-height: 65px; /* Restricts the vertical size so they line up cleanly in a flat row */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.5)); /* Adds clean separation from background */
+}
+
+/* ==========================================================================
+   6. SITE APPROVED NOTICE & FOOTER BRACE LAYOUTS
+   ========================================================================== */
+.canvas-footer {
+    width: 100%;
+    margin-top: 80px;
+    clear: both;
+    text-align: center;
+    
+    /* 🛠️ LIGHTENED OVERLAY VALUE (From 0.9 to 0.35) */
+    background: rgba(11, 30, 54, 0.35); 
+    
+    border-top: 3px solid #ffb300; 
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.emblem-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    padding: 10px 20px 20px 20px;
+    margin-bottom: 20px;
+}
+
+.footer-emblem-graphic {
+    height: auto;
+    max-height: 60px; /* Clean uniform heights for the branch family shields */
+    width: auto;
+    object-fit: contain;
+    filter: drop-shadow(0px 4px 8px rgba(0,0,0,0.5));
+}
+
+.facebook-validation-panel {
+    text-align: center;
+    margin: 30px auto;
+    max-width: 600px;
+    padding: 0 15px;
+}
+
+/* ==========================================================================
+   8. OFFICERS GOLD EMBLEM COIN GRID LAYOUTS
+   ========================================================================== */
+.officers-header-banner {
+    width: 100%;
+    position: relative;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.officers-title-sub {
+    font-family: "Impact", Arial, sans-serif;
+    color: #111111;
+    font-size: 1.8rem;
+    letter-spacing: 1px;
+    margin-top: -10px;
+}
+
+/* Sidebar decorative banner stack layout rules */
+.officer-badge-sidebar {
+    position: absolute;
+    top: -50px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.badge-item {
+    font-family: "Impact", Arial, sans-serif;
+    padding: 6px 15px;
+    border-radius: 4px;
+    border: 2px solid #000000;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+    text-transform: uppercase;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.1;
+}
+
+.custom-btn-commander { background: #3c0c0c; color: #ffb300; }
+.custom-btn-bio { background: #ffffff; color: #3c0c0c; font-family: "Georgia", serif; font-style: italic; text-transform: none; }
+.custom-btn-newsletter { background: #b71c1c; color: #ffffff; }
+.month-sub { color: #ffb300; font-size: 0.9rem; font-family: "Georgia", serif; text-transform: none; }
+
+/* The Gold Placeholder Framing Circles */
+.commander-spotlight-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.officers-grid-lane {
+    display: grid;
+    gap: 30px 15px;
+    margin-bottom: 45px;
+    justify-items: center;
+    width: 100%;
+}
+
+.row-of-three { grid-template-columns: repeat(3, 1fr); max-width: 750px; margin-left: auto; margin-right: auto; }
+.row-of-four  { grid-template-columns: repeat(4, 1fr); }
+.row-of-two   { grid-template-columns: repeat(2, 1fr); max-width: 500px; margin-left: auto; margin-right: auto; }
+
+.officer-node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+}
+
+.officer-circle-frame {
+    width: 125px;
+    height: 125px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 6px 12px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Replicates the gradient outer gold rings */
+.coming-soon-gold {
+    background: radial-gradient(circle, #b71c1c 60%, #801010 61%, #ffd700 62%, #cca100 65%, #ffd700 70%);
+    border: 4px double #ffd700;
+}
+
+.coming-soon-gold span {
+    font-family: "Impact", Arial, sans-serif;
+    color: #ffffff;
+    font-size: 1.1rem;
+    text-align: center;
+    line-height: 1.2;
+    transform: rotate(-15deg); /* Stamped tilt effect */
+    text-shadow: 2px 2px 3px #000000;
+}
+
+.active-photo {
+    background: transparent;
+    border: 5px solid #ffd700;
+    outline: 2px solid #cca100;
+}
+
+.officer-img-asset {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* ==========================================================================
+   8b. HIGH-CONTRAST OFFICER LABEL REVISIONS (PURE TEXT SHADOW SHIELDS)
+   ========================================================================== */
+.officer-name-label {
+    /* 🔴 UPGRADED: Thick black font stack ensures maximum physical footprint over textures */
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-weight: 900;
+    font-size: 0.85rem;            /* Bumped size slightly for sharper text delivery */
+    color: #ffffff;                /* 🔴 CRITICAL: Crisp white text cuts through background clutter */
+    text-transform: uppercase;
+    margin-top: 12px;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    
+    /* 🔴 THE READABILITY SHIELD: 360-degree deep outline locks text clear of backdrop graphics */
+    text-shadow: 2px 2px 2px #000000, 
+                -2px -2px 2px #000000, 
+                 2px -2px 2px #000000, 
+                -2px 2px 2px #000000,
+                 0px 3px 5px #000000;
+}
+
+/* Adjustments for smaller viewport view states */
+@media (max-width: 768px) {
+    .row-of-three, .row-of-four, .row-of-two {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
