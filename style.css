@@ -156,42 +156,48 @@ body {
 
 
 /* ==========================================================================
-   4. MIDDLE MAIN BODY CONTENT LAYOUT (FLEXBOX ALIGNMENT SECURITY LOCK)
+   4. MIDDLE MAIN BODY CONTENT LAYOUT (ABSOLUTE SIDEBAR CENTER LOCK)
    ========================================================================== */
 .content-container {
   max-width: 900px;
   margin: 30px auto;
   padding: 0 20px;
   min-height: 650px;
-  display: flex;
-  gap: 30px;
-  align-items: flex-start;
-  justify-content: center;
+  position: relative; /* Creates a structural anchor point for the sidebar */
+  display: block;     /* Drops flexbox to let elements center natively */
 }
 
+/* Sidebar Navigation - Completely independent of center-line calculations */
+.canvas-side-nav {
+  position: absolute;
+  /* ADJUSTED FIX: Pushes the sidebar down vertically. 
+     Change 140px to match the estimated vertical height of your header banner */
+  top: 140px; 
+  left: 20px;       /* Aligns neatly with the content container's padding */
+  width: 165px;
+  z-index: 10;      /* Ensures navigation links stay on top and clickable */
+}
+
+/* ==========================================================================
+   4a. MAIN CONTENT BOX ALIGNMENT BALANCE
+   ========================================================================== */
+/* All core inner content structures now center globally across all files */
 .canvas-content-box, 
 .live-branding-center, 
 .officers-header-banner, 
 .commander-spotlight-section, 
 .officers-grid-lane {
-  flex: 1 1 0%;
-  min-width: 0;
-}
-
-.canvas-side-nav {
-  width: 165px;
-  flex-shrink: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  text-align: center;
 }
 
 /* ==========================================================================
    4b. STATIC HOME PAGE CONTENT TYPOGRAPHY (PRESERVED RED URL STYLES)
    ========================================================================== */
 .live-branding-center {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   margin-top: 20px;
 }
 
