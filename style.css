@@ -167,7 +167,7 @@ body {
     padding-left: 200px; /* Leaves clear structural clearance on the left edge for menu */
     
     /* 🔴 CRITICAL STABILIZER: Forces short pages to stay tall enough to clear the sidebar */
-    min-height: 520px;   /* 🛠️ Adjust this number up or down to match your sidebar's exact height */
+    min-height: 650px;   /* 🛠️ Adjust this number up or down to match your sidebar's exact height */
 }
 
 
