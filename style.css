@@ -236,6 +236,31 @@ body {
   letter-spacing: 0.5px;
 }
 
+/* ==========================================================================
+   4c. GLOBAL TEXT LEGIBILITY (ANTI-BLUR BACKGROUND SHADOWS)
+   ========================================================================== */
+/* Targets all standard text elements across inner page templates */
+.canvas-content-box p,
+.canvas-content-box li,
+.canvas-content-box td,
+.canvas-content-box th,
+.canvas-content-box h1,
+.canvas-content-box h2,
+.canvas-content-box h3,
+.canvas-content-box h4,
+.canvas-content-box label,
+.canvas-content-box span:not(.url-highlight-red) {
+  text-shadow: 2px 2px 4px #000000, -1px -1px 0px #000000;
+  /* Softens readability against complex background.gif patterns */
+}
+
+/* Specific fix for tables, list items, or forms on dark backgrounds */
+.canvas-content-box table {
+  background-color: rgba(0, 0, 0, 0.4); /* Adds a subtle dark tint layer behind data grids */
+  border-collapse: collapse;
+  border-radius: 4px;
+}
+
 
 /* ==========================================================================
    5. HISTORY, OPEN DAILY SIGN & FACEBOOK PANEL UTILITIES
