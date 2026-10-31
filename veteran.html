@@ -5,6 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post 394 - Veteran Resources</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Embed layout overrides to inject image elements safely into nodes */
+        .officer-node a, .live-branding-center a {
+            display: block;
+            text-decoration: none;
+            width: 100%;
+            height: 100%;
+        }
+        .officer-node img {
+            max-height: 70px;
+            max-width: 95%;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
+        }
+        .officer-node span {
+            display: block;
+            font-size: 11px;
+            color: #ffffff;
+            margin-top: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .live-branding-center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .live-branding-center img {
+            max-height: 60px;
+            object-fit: contain;
+        }
+    </style>
 </head>
 <body>
 
@@ -20,48 +55,84 @@
             <p class="years-banner">Resources for Veterans</p>
         </div>
 
+        <!-- ORIGINAL TOP GRAPHIC BANNER AND SEALS -->
+        <div style="text-align: center; margin-top: 20px; margin-bottom: 25px;">
+            <img src="images/resources/resources-banner.jpg" alt="Resources Banner" style="max-width: 100%; height: auto; display: block; margin: 0 auto 15px;" />
+            <a href="#" target="_blank" rel="noopener">
+                <img src="images/resources/covid-kits.jpg" alt="Free COVID-19 Test Kits" style="max-width: 100%; height: auto; max-height: 45px;" />
+            </a>
+        </div>
+
         <!-- PRIMARY BENEFITS & DOCUMENTS -->
         <h2 class="day-highlight" style="margin: 25px 0 15px 0; font-size: 1.2rem; color: #ffb300;">Core Benefits & Records</h2>
-        <div class="live-branding-center" style="gap: 15px; margin-bottom: 30px; width: 100%;">
-            <a href="https://va.gov" target="_blank" class="url-highlight-red">GET YOUR VA CARD</a>
-            <a href="https://archives.gov" target="_blank" class="url-highlight-red">GET YOUR DD-214</a>
-            <a href="https://flhsmv.gov" target="_blank" class="url-highlight-red">FLORIDA DMV</a>
+        <div class="live-branding-center" style="margin-bottom: 30px; width: 100%;">
+            <a href="https://va.gov" target="_blank" class="url-highlight-red" style="padding: 10px; height: auto;">
+                <img src="images/resources/va-card.png" alt="GET YOUR VA CARD" />
+            </a>
+            <a href="https://archives.gov" target="_blank" class="url-highlight-red" style="padding: 10px; height: auto;">
+                <img src="images/resources/dd214-direct.png" alt="GET YOUR DD-214" />
+            </a>
+            <a href="https://flhsmv.gov" target="_blank" class="url-highlight-red" style="padding: 10px; height: auto;">
+                <img src="images/resources/fl-dmv.png" alt="FLORIDA DMV" />
+            </a>
         </div>
 
         <!-- MILITARY SERVICE BRANCHES -->
         <h2 class="day-highlight" style="margin: 20px 0 15px 0; font-size: 1.2rem; color: #ffb300;">Branches of Service</h2>
         <div class="officers-grid-lane row-of-three" style="margin-bottom: 30px;">
-            <div class="officer-node"><a href="https://www.army.mil" target="_blank" class="url-highlight-red" style="font-size: 1.6rem;">U.S. Army</a></div>
-            <div class="officer-node"><a href="https://www.navy.mil" target="_blank" class="url-highlight-red" style="font-size: 1.6rem;">U.S. Navy</a></div>
-            <div class="officer-node"><a href="https://www.af.mil" target="_blank" class="url-highlight-red" style="font-size: 1.6rem;">Air Force</a></div>
-            <div class="officer-node"><a href="https://www.marines.mil" target="_blank" class="url-highlight-red" style="font-size: 1.6rem;">Marine Corps</a></div>
-            <div class="officer-node"><a href="https://www.uscg.mil" target="_blank" class="url-highlight-red" style="font-size: 1.6rem;">Coast Guard</a></div>
-            <div class="officer-node"><a href="https://www.spaceforce.mil" target="_blank" class="url-highlight-red" style="font-size: 1.6rem;">Space Force</a></div>
-            <div class="officer-node" style="grid-column: span 3; text-align: center;"><a href="https://www.nationalguard.mil" target="_blank" class="url-highlight-red" style="font-size: 1.6rem;">National Guard</a></div>
+            <div class="officer-node"><a href="https://www.navy.mil" target="_blank"><img src="images/resources/navy.png" alt="U.S. Navy" /></a></div>
+            <div class="officer-node"><a href="https://www.af.mil" target="_blank"><img src="images/resources/air-force.png" alt="Air Force" /></a></div>
+            <div class="officer-node"><a href="https://www.spaceforce.mil" target="_blank"><img src="images/resources/space-force.png" alt="Space Force" /></a></div>
+            <div class="officer-node"><a href="https://www.marines.mil" target="_blank"><img src="images/resources/marines.png" alt="Marine Corps" /></a></div>
+            <div class="officer-node"><a href="https://gocoastguard.com" target="_blank"><img src="images/resources/coast-guard.png" alt="Coast Guard" /></a></div>
+            <div class="officer-node"><a href="https://ng.mil" target="_blank"><img src="images/resources/fl-national-guard.png" alt="Florida NG" /></a></div>
+            <div class="officer-node" style="grid-column: span 3; text-align: center;"><a href="https://www.army.mil" target="_blank"><img src="images/resources/army.png" alt="U.S. Army" style="max-height: 80px;" /></a></div>
         </div>
 
         <!-- VETERAN ASSISTANCE & COMMUNITY -->
         <h2 class="day-highlight" style="margin: 20px 0 15px 0; font-size: 1.2rem; color: #ffb300;">Support Organizations & Resources</h2>
-        <div class="officers-grid-lane row-of-two">
-            <div class="officer-node"><a href="https://legion.org" target="_blank" class="url-highlight-red" style="font-size: 1.4rem;">The American Legion</a></div>
-            <div class="officer-node"><a href="https://vva.org" target="_blank" class="url-highlight-red" style="font-size: 1.4rem;">Vietnam Veterans</a></div>
-            <div class="officer-node"><a href="https://combatvets.org" target="_blank" class="url-highlight-red" style="font-size: 1.4rem;">Combat Vets Assoc</a></div>
-            <div class="officer-node"><a href="https://dav.org" target="_blank" class="url-highlight-red" style="font-size: 1.4rem;">Disabled Am. Veterans</a></div>
-            <div class="officer-node"><a href="https://vetrelief.org" target="_blank" class="url-highlight-red" style="font-size: 1.4rem;">Project VetRelief</a></div>
-            <div class="officer-node"><a href="https://maketheconnection.net" target="_blank" class="url-highlight-red" style="font-size: 1.4rem;">Make The Connection</a></div>
-            <div class="officer-node"><a href="https://ssa.gov" target="_blank" class="url-highlight-red" style="font-size: 1.4rem;">Social Security</a></div>
-            <div class="officer-node"><a href="https://salvationarmyusa.org" target="_blank" class="url-highlight-red" style="font-size: 1.4rem;">Salvation Army</a></div>
-            <div class="officer-node" style="grid-column: span 2; text-align: center;"><a href="https://sunpass.com" target="_blank" class="url-highlight-red" style="font-size: 1.4rem;">SunPass Florida</a></div>
+        <div class="officers-grid-lane row-of-two" style="margin-bottom: 30px;">
+            <div class="officer-node"><a href="https://legion.org" target="_blank"><img src="images/resources/legion-national.png" alt="American Legion National" /><span>American Legion National</span></a></div>
+            <div class="officer-node"><a href="https://floridalegion.org" target="_blank"><img src="images/resources/legion-fl.png" alt="Dept of Florida" /><span>Dept of Florida</span></a></div>
+            <div class="officer-node"><a href="https://va.gov" target="_blank"><img src="images/resources/homeless-vets.png" alt="Homeless Veterans" /></a></div>
+            <div class="officer-node"><a href="https://defense.gov" target="_blank"><img src="images/resources/defense-dept.png" alt="DoD" /></a></div>
+            <div class="officer-node"><a href="https://vva.org" target="_blank"><img src="images/resources/vva.png" alt="Vietnam Veterans" /></a></div>
+            <div class="officer-node"><a href="https://combatvets.org" target="_blank"><img src="images/resources/combat-vets.png" alt="Combat Vets" /></a></div>
+            <div class="officer-node"><a href="https://kwva.org" target="_blank"><img src="images/resources/korean-war.png" alt="Korean War Veterans" /></a></div>
+            <div class="officer-node"><a href="https://www.va.gov" target="_blank"><img src="images/resources/i-care.png" alt="I CARE" /></a></div>
+            <div class="officer-node"><a href="https://dav.org" target="_blank"><img src="images/resources/dav.png" alt="Disabled American Veterans" /></a></div>
+            <div class="officer-node"><a href="https://vetrelief.org" target="_blank"><img src="images/resources/vet-relief.png" alt="Project VetRelief" /></a></div>
+            <div class="officer-node"><a href="https://pow-miafamilies.org" target="_blank"><img src="images/resources/pow-mia.png" alt="POW-MIA Alliance" /></a></div>
+            <div class="officer-node"><a href="#" target="_blank"><img src="images/resources/usfor.png" alt="USFOR" /></a></div>
+            <div class="officer-node"><a href="https://myflorida.com" target="_blank"><img src="images/resources/state-seal.png" alt="State of Florida" /></a></div>
+            <div class="officer-node"><a href="https://www.archives.gov" target="_blank"><img src="images/resources/archives.png" alt="National Archives" /></a></div>
+            <div class="officer-node"><a href="https://www.maketheconnection.net" target="_blank"><img src="images/resources/make-connection.png" alt="Make The Connection" /></a></div>
+            <div class="officer-node"><a href="https://neptunesociety.com" target="_blank"><img src="images/resources/neptune.png" alt="Neptune Society" /></a></div>
+            <div class="officer-node"><a href="https://feedhopenow.org" target="_blank"><img src="images/resources/second-harvest.png" alt="Second Harvest" /></a></div>
+            <div class="officer-node"><a href="https://ssa.gov" target="_blank"><img src="images/resources/social-security.png" alt="Social Security" /></a></div>
+            <div class="officer-node"><a href="#" target="_blank"><img src="images/resources/veteran-group.png" alt="The Veteran Group" /></a></div>
+            <div class="officer-node"><a href="https://salvationarmyusa.org" target="_blank"><img src="images/resources/salvation-army.png" alt="Salvation Army" /></a></div>
+            <div class="officer-node"><a href="https://www.emblem.legion.org" target="_blank"><img src="images/resources/flag-emblem.png" alt="Flag & Emblem" /></a></div>
+            <div class="officer-node" style="grid-column: span 2; text-align: center;"><a href="https://sunpass.com" target="_blank"><img src="images/resources/sunpass.png" alt="SunPass Florida" style="max-height: 65px;" /></a></div>
+        </div>
+
+        <!-- TRAVELING MEMORIAL WALL HIGHLIGHT AT THE BOTTOM -->
+        <div style="text-align: center; border-top: 1px solid #444; padding-top: 20px; margin-top: 25px; width: 100%;">
+            <a href="http://floridavietnamwall.org" target="_blank" rel="noopener" style="text-decoration: none; color: #fff; display: inline-block;">
+                <img src="images/resources/vietnam-wall-fl.png" alt="The Vietnam Traveling Memorial Wall" style="max-height: 80px; display: block; margin: 0 auto 5px;" />
+                <span style="color: #ffb300; font-weight: bold; font-size: 14px;">The Vietnam Traveling Memorial Wall</span>
+                <span style="display: block; font-size: 11px; color: #aaa; margin-top: 3px;">April 30th - May 7th (2026)</span>
+            </a>
         </div>
 
     </main>
 
     <!-- CLOSE CONTENT LAYER WRAPPER -->
-    <!-- Closes the layout grid container div that gets opened inside header.html -->
     </div> 
 
     <!-- 3. FOOTER INJECTION TARGET -->
     <div id="footer-placeholder"></div>
+    
     <!-- 4. TEMPLATE SCRIPT INITIALIZATION -->
     <script src="js/injector.js"></script>
 
