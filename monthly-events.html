@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post 394 - Monthly Events</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Automatically sizes your event flyers to stay aligned and look crisp */
+        .event-flyer-node {
+            background: rgba(0, 0, 0, 0.4);
+            border: 1px solid #b22222;
+            padding: 15px;
+            border-radius: 4px;
+            text-align: center;
+            box-sizing: border-box;
+        }
+        .event-flyer-node img {
+            max-width: 100%;
+            height: auto;
+            border: 2px solid #fff;
+            display: block;
+            margin: 0 auto 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+        }
+        .event-title-text {
+            display: block;
+            font-size: 1.1rem;
+            color: #ffb300;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. HEADER & SIDEBAR INJECTION TARGET -->
+    <div id="header-placeholder"></div>
+
+    <!-- 2. MAIN CENTER-LOCKED CONTENT CONTAINER -->
+    <main class="canvas-content-box">
+        
+        <!-- Aligned Header Banner Section -->
+        <div class="officers-header-banner">
+            <h1 class="title-large-bold">Upcoming Events</h1>
+            <p class="years-banner">What's Happening at Post 394</p>
+        </div>
+
+        <h2 class="day-highlight" style="margin: 25px 0 15px 0; font-size: 1.2rem; color: #ffb300;">Event Flyers & Information</h2>
+        
+        <!-- The live script will search the folder and inject the flyers directly here -->
+        <div id="flyers-grid-target" class="officers-grid-lane row-of-two">
+            <p style="grid-column: span 2; text-align: center; color: #aaa; padding: 20px;">
+                Scanning for upcoming event flyers...
+            </p>
+        </div>
+
+    </main>
+
+    <!-- CLOSE CONTENT LAYER WRAPPER -->
+    </div> 
+
+    <!-- 3. FOOTER INJECTION TARGET -->
+    <div id="footer-placeholder"></div>
+    
+    <!-- 4. TEMPLATE SCRIPT INITIALIZATION -->
+    <script src="js/injector.js"></script>
+
+</body>
+</html>
