@@ -1,0 +1,30 @@
+name: Auto Update Event Flyers
+
+on:
+  push:
+    paths:
+      - 'flyers/**' # Automatically runs when files in the flyers folder change
+  workflow_dispatch: # <-- THIS IS THE TRIGGER: Adds the manual run button in GitHub
+
+permissions:
+  contents: write
+
+jobs:
+  build-index:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository Code
+        uses: actions/checkout@v4
+
+      - name: Generate Flyers Index JSON
+        run: |
+          cd flyers
+          ls | grep -E "\.(jpg|jpeg|png|gif|webp)$" | jq -R -s -c 'split("\n")[:-1]' > index.json
+
+      - name: Commit and Push Updated Index
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@://github.com"
+          git add flyers/index.json
+          git diff-index --quiet HEAD || git commit -m "automation: update flyers index layout manifest"
+          git push
