@@ -6,30 +6,61 @@
     <title>Post 394 - Monthly Events</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Automatically sizes your event flyers to stay aligned and look crisp */
+        /* 1. BREAK UNWANTED BOUNDS: Forces container wide across the screen */
+        .canvas-content-box, main {
+            max-width: 95% !important; 
+            width: calc(100% - 240px) !important; /* Spares space for left sidebar */
+            margin-left: 220px !important;       /* Anchors next to your sidebar position */
+            box-sizing: border-box !important;
+        }
+
+        /* 2. DYNAMIC GRID: Splits area evenly into 2 large column slots */
+        .officers-grid-lane {
+            display: grid !important;
+            grid-template-columns: repeat(2, 1fr) !important;
+            gap: 30px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+        
         .event-flyer-node {
-            background: rgba(0, 0, 0, 0.4);
-            border: 1px solid #b22222;
-            padding: 15px;
-            border-radius: 4px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 2px solid #b22222;
+            padding: 20px;
+            border-radius: 6px;
             text-align: center;
             box-sizing: border-box;
+            width: 100% !important;
         }
+        
         .event-flyer-node img {
-            max-width: 100%;
-            height: auto;
-            border: 2px solid #fff;
+            width: 100% !important;   /* Stretches the image to fill the large column fully */
+            max-width: 100% !important;
+            height: auto;             /* Preserves original layout proportions */
+            border: 1px solid #fff;
             display: block;
-            margin: 0 auto 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+            margin: 0 auto 15px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.6);
         }
+        
         .event-title-text {
             display: block;
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: #ffb300;
             font-weight: bold;
             text-transform: uppercase;
             margin-top: 5px;
+        }
+
+        /* 3. MOBILE RESPONSIVENESS: Stacks into 1 column on smaller tablet screens */
+        @media (max-width: 992px) {
+            .canvas-content-box, main {
+                width: 100% !important;
+                margin-left: 0 !important;
+            }
+            .officers-grid-lane {
+                grid-template-columns: 1fr !important;
+            }
         }
     </style>
 </head>
@@ -49,9 +80,9 @@
 
         <h2 class="day-highlight" style="margin: 25px 0 15px 0; font-size: 1.2rem; color: #ffb300;">Event Flyers & Information</h2>
         
-        <!-- The live script will search the folder and inject the flyers directly here -->
-        <div id="flyers-grid-target" class="officers-grid-lane row-of-two">
-            <p style="grid-column: span 2; text-align: center; color: #aaa; padding: 20px;">
+        <!-- REMOVED row-of-two TO AVOID STYLESHEET CLASH -->
+        <div id="flyers-grid-target" class="officers-grid-lane">
+            <p style="text-align: center; color: #aaa; padding: 20px;">
                 Scanning for upcoming event flyers...
             </p>
         </div>
