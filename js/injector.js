@@ -23,20 +23,4 @@ document.addEventListener("DOMContentLoaded", () => {
             .catch(err => console.error("Footer Error:", err));
     }
 
-    // 3. Inject Veteran Grid Content (Only on veteran.html)
-    const path = window.location.pathname;
-    const currentPage = path.split("/").pop().replace(".html", "") || "index";
-
-    if (currentPage === 'veteran') {
-        const gridPlaceholder = document.getElementById("center-content-block");
-        if (gridPlaceholder) {
-            fetch("veteran-grid.html")
-                .then(response => {
-                    if (!response.ok) throw new Error("Grid layout error");
-                    return response.text();
-                })
-                .then(data => { gridPlaceholder.innerHTML = data; })
-                .catch(err => console.error("Grid Error:", err));
-        }
-    }
 });
