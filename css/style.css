@@ -11,7 +11,7 @@ body {
     font-family: "Impact", Arial, sans-serif; 
     background-color: #0b1e36; /* Dark navy fallback instead of pitch black */
     
-    background-image: url('images/background.gif');
+    background-image: url('/images/background.gif');
     background-attachment: fixed;  /* 🔴 LOCKS IT: Keeps the image locked to the glass instead of scrolling away */
     background-size: cover;        /* 🔴 STRETCHES IT: Forces the image to always stretch to cover the entire page height */
     background-position: center top;
