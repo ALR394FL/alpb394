@@ -89,6 +89,13 @@
 @media (max-width: 720px) {
   /* Modifies aspect proportions on narrow smartphone screen resolutions so grids stretch tall */
   .calendar-iframe-container {
+    /* 1. Clear out the desktop sidebar push completely */
+    margin-left: 0 !important; 
+    
+    /* 2. Force the container to take back the full screen width */
+    width: 100% !important; 
+    
+    /* 3. Retain your crisp, tall box proportion for phone screen grids */
     padding-bottom: 120%; 
   }
 }
