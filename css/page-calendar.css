@@ -1,0 +1,111 @@
+/* ==========================================================================
+   PAGE MODULE: FULL CALENDAR IFRAME CONTAINER
+   ========================================================================== */
+.page-hero {
+  background: var(--charcoal);
+  color: var(--paper);
+  border-bottom: 3px solid var(--red);
+  padding: 75px 0 80px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+/* Background layout decoration watermark */
+.page-hero:after {
+  content: "394";
+  color: #ffffff06;
+  font: 800 15rem/1 'Arial Narrow', Impact, sans-serif;
+  position: absolute;
+  bottom: -55px;
+  right: 2vw;
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* "On the schedule" label configuration tracking */
+.page-hero .eyebrow {
+  color: var(--gold) !important;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  margin: 0 0 20px;
+  display: block;
+  font: 800 .95rem/1.3 'Arial Narrow', Impact, sans-serif;
+  position: relative;
+  z-index: 3;
+}
+
+/* Fluid display headline font engine layout scaling rules */
+.page-hero h1 {
+  text-transform: uppercase;
+  letter-spacing: .005em;
+  margin: 0;
+  font-family: 'Arial Narrow', Impact, sans-serif;
+  font-size: clamp(4rem, 7vw, 7rem);
+  line-height: .92;
+  position: relative;
+  z-index: 3;
+}
+
+.page-hero .wrap > p:last-child {
+  color: #c8c7c3;
+  max-width: 700px;
+  margin: 24px 0 0;
+  font-size: 1.15rem;
+  line-height: 1.65;
+  position: relative;
+  z-index: 3;
+}
+/* ==========================================================================
+   PAGE MODULE: EXTRACTED GOOGLE CALENDAR EMBED VIEW ENGINE
+   ========================================================================== */
+.calendar-iframe-container {
+  position: relative;
+  margin-left: 165px; /* Adjust this number to match the exact width of your fixed menu + some breathing room */
+  width: calc(100% - 165px); /* Subtracts the menu width so the calendar doesn't blow past the right side of the screen */
+
+  /* Creates a fluid aspect box ratio so the layout stays crisp across screen scales */
+  padding-bottom: 75%; 
+  height: 0;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+}
+
+/* Forces the embedded window canvas layer to stretch flat inside our bounding box container frame */
+.calendar-iframe-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* ==========================================================================
+   RESPONSIVE LAYOUT CONSTRAINTS
+   ========================================================================== */
+@media (max-width: 720px) {
+  /* Modifies aspect proportions on narrow smartphone screen resolutions so grids stretch tall */
+  .calendar-iframe-container {
+    padding-bottom: 120%; 
+  }
+}
+
+/* Centers the content and adds safety margins/borders on the left and right */
+.wrap {
+  width: 100%;
+  max-width: 1200px;      /* Prevents the layout from getting too wide on huge monitors */
+  margin-left: auto;      /* Perfectly centers the container on the screen */
+  margin-right: auto;     /* Perfectly centers the container on the screen */
+  padding-left: 20px;     /* The "border" / padding on mobile screens */
+  padding-right: 20px;    /* The "border" / padding on mobile screens */
+  box-sizing: border-box; /* Makes sure the padding doesn't break the width */
+}
+
+/* Adds breathing room/spacing above and below the calendar section */
+.section {
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
